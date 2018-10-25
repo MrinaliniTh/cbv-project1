@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block body_block %}
+    <h1>Welcome to School</h1>
+    <h2>Here are your access record</h2>
+    <div class="jumbotron">
+        <ul>
+                {%for school in school_list%}
+                <li><h1><a href='{{school.id}}'>{{school}}</a></h1></li>
+                {%endfor%}
+                
+        </ul>
+        
+    </div>
+{% endblock %}

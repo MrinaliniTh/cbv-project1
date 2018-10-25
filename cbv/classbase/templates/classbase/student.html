@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block body_block %}
+<div class="jumbotron">
+        <h1>Here are your schools</h1>
+        <h3>{{school.name}}</h3>
+        <h3>{{school.principal}}</h3>
+        <h3>{{school.location}}</h3>
+    <h1>students:</h1>
+            {%for stu in school.students.all%}
+            <p>{{stu.name}} which is {{stu.age}}</p></li>
+            
+            {%endfor%}
+    
+  </div>
+  <div class="container">
+<p><a class="btn btn-warning" href="{% url 'classbase:update' pk=school.pk %}">Update</a>         
+<a class="btn btn-danger" href="{% url 'classbase:delete' pk=school.pk %}">Delete</a></p>          
+
+</div> 
+{% endblock %}
+
+    
